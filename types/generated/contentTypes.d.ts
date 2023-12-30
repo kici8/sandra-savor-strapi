@@ -696,7 +696,6 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   attributes: {
     title: Attribute.String &
       Attribute.Required &
-      Attribute.Unique &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -749,28 +748,27 @@ export interface ApiWorkWork extends Schema.CollectionType {
     };
   };
   attributes: {
-    Title: Attribute.String &
-      Attribute.Unique &
+    title: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    Images: Attribute.Media &
+    images: Attribute.Media &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
         };
       }>;
-    Description: Attribute.RichText &
+    description: Attribute.RichText &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    DateOfCreation: Attribute.Date &
+    dateOfCreation: Attribute.Date &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: false;
@@ -781,7 +779,7 @@ export interface ApiWorkWork extends Schema.CollectionType {
       'manyToMany',
       'api::category.category'
     >;
-    Slug: Attribute.UID<'api::work.work', 'Title'> &
+    slug: Attribute.UID &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -793,7 +791,7 @@ export interface ApiWorkWork extends Schema.CollectionType {
           localized: false;
         };
       }>;
-    HeightInCm: Attribute.Decimal &
+    heightInCm: Attribute.Decimal &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: false;

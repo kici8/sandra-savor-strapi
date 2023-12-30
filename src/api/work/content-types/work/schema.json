@@ -16,16 +16,16 @@
     }
   },
   "attributes": {
-    "Title": {
+    "title": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
       "type": "string",
-      "unique": true
+      "unique": false
     },
-    "Images": {
+    "images": {
       "type": "media",
       "multiple": true,
       "required": true,
@@ -38,7 +38,7 @@
         }
       }
     },
-    "Description": {
+    "description": {
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -47,7 +47,7 @@
       "type": "richtext",
       "required": true
     },
-    "DateOfCreation": {
+    "dateOfCreation": {
       "pluginOptions": {
         "i18n": {
           "localized": false
@@ -61,14 +61,13 @@
       "target": "api::category.category",
       "inversedBy": "works"
     },
-    "Slug": {
+    "slug": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "uid",
-      "targetField": "Title"
+      "type": "uid"
     },
     "widthInCm": {
       "pluginOptions": {
@@ -78,7 +77,7 @@
       },
       "type": "decimal"
     },
-    "HeightInCm": {
+    "heightInCm": {
       "pluginOptions": {
         "i18n": {
           "localized": false
