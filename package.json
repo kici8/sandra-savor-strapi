@@ -11,7 +11,8 @@
     "build": "strapi build",
     "develop": "strapi develop",
     "start": "strapi start",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "railway-dev": "railway run yarn run develop"
   },
   "dependencies": {
     "@strapi/plugin-graphql": "4.15.0",
