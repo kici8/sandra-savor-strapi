@@ -25,6 +25,8 @@ module.exports = ({ env }) => ({
       playgroundAlways: true,
       depthLimit: 7,
       amountLimit: 100,
+      // TODO: disable apollo tracing in production
+      introspection: true,
       apolloServer: {
         tracing: false,
       },
