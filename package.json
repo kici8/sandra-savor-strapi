@@ -15,16 +15,15 @@
     "railway-dev": "railway run yarn run develop"
   },
   "dependencies": {
-    "@strapi/plugin-graphql": "4.15.0",
-    "@strapi/plugin-i18n": "4.15.0",
-    "@strapi/plugin-users-permissions": "4.15.0",
-    "@strapi/provider-upload-cloudinary": "4.15.0",
-    "@strapi/strapi": "4.15.0",
-    "pg": "8.11.3",
+    "@strapi/plugin-graphql": "5.52.0",
+    "@strapi/plugin-users-permissions": "5.52.0",
+    "@strapi/provider-upload-cloudinary": "5.52.0",
+    "@strapi/strapi": "5.52.0",
+    "pg": "8.23.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-router-dom": "^5.2.0",
-    "styled-components": "^5.2.1"
+    "react-router-dom": "^6.0.0",
+    "styled-components": "^6.0.0"
   },
   "devDependencies": {},
   "engines": {

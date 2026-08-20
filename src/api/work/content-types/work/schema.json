@@ -17,43 +17,106 @@
   },
   "attributes": {
     "title": {
+      "type": "string",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "string",
+      "required": true,
       "unique": false
     },
-    "images": {
+    "slug": {
+      "type": "uid",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "coverImage": {
       "type": "media",
-      "multiple": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "multiple": false,
       "required": true,
       "allowedTypes": [
         "images"
-      ],
+      ]
+    },
+    "description": {
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "dimensions": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "component": "utils.dimensions",
+      "repeatable": false
+    },
+    "date": {
+      "type": "date",
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
       }
     },
-    "description": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "richtext",
-      "required": true
-    },
-    "dateOfCreation": {
+    "images": {
+      "type": "media",
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
       },
-      "type": "date"
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "price": {
+      "type": "decimal",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "priceOnRequest": {
+      "type": "boolean",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "availability": {
+      "type": "enumeration",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "default": "RESERVED",
+      "enum": [
+        "AVAILABLE",
+        "SOLD",
+        "RESERVED"
+      ]
     },
     "categories": {
       "type": "relation",
@@ -61,29 +124,17 @@
       "target": "api::category.category",
       "inversedBy": "works"
     },
-    "slug": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "uid"
+    "techniques": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::technique.technique",
+      "mappedBy": "works"
     },
-    "widthInCm": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "decimal"
-    },
-    "heightInCm": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "decimal"
+    "collection": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::collection.collection",
+      "inversedBy": "works"
     }
   }
 }
